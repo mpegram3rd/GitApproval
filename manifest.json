@@ -1,0 +1,27 @@
+{
+  "name": "Git Approval",
+  "version": "1.0",
+  "description": "Handy-Dandy Git Approval Shortcut",
+  "manifest_version": 2,
+  "background": {
+    "scripts":["background.js"],
+    "persistent" : false
+  },
+  "page_action" :
+  {
+    "default_icon" : {
+      "16": "images/icon16.png",
+      "24": "images/icon24.png",
+      "32": "images/icon32.png"
+    },
+    "default_title" : "There is a default title"
+  },
+  "permissions": [
+    "activeTab", "tabs", "webNavigation", "declarativeContent"
+  ],
+  "icons" : {
+    "16": "images/icon16.png",
+    "24" : "images/icon24.png",
+    "32" : "images/icon32.png"
+  }
+}
