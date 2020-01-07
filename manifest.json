@@ -1,7 +1,7 @@
 {
   "name": "Git Approval",
   "version": "1.0",
-  "description": "Handy-Dandy Git Approval Shortcut",
+  "description": "Git Approval Emoji",
   "manifest_version": 2,
   "background": {
     "scripts":["background.js"],
@@ -14,10 +14,10 @@
       "24": "images/icon24.png",
       "32": "images/icon32.png"
     },
-    "default_title" : "There is a default title"
+    "default_title" : "Make Approval Emotional"
   },
   "permissions": [
-    "activeTab", "tabs", "webNavigation", "declarativeContent"
+    "activeTab", "tabs", "declarativeContent"
   ],
   "icons" : {
     "16": "images/icon16.png",
