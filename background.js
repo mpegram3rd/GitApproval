@@ -7,7 +7,8 @@ chrome.runtime.onInstalled.addListener(function() {
                 // That fires when a page's URL contains a 'g' ...
                 conditions: [
                     new chrome.declarativeContent.PageStateMatcher({
-                        pageUrl: { hostContains : 'github', pathContains : 'pull', schemes : ['https'] }
+                        pageUrl: { hostContains : 'github', pathContains : 'pull', schemes : ['https'] },
+                        css : ['#pull_request_review_body']
                     })
                 ],
                 // And shows the extension's page action.
