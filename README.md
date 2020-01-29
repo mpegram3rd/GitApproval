@@ -393,12 +393,7 @@ Have fun and enjoy!
 :mailbox_with_mail:
 :mailbox_with_no_mail:
 :door:
-:smoking:
-:bomb:
-:gun:
 :hocho:
-:pill:
-:syringe:
 :page_facing_up:
 :page_with_curl:
 :bookmark_tabs:
