@@ -117,14 +117,11 @@ Have fun and enjoy!
 :clap:
 :muscle:
 :metal:
-:fu:
 :walking:
 :runner:
 :running:
 :couple:
 :family:
-:two_men_holding_hands:
-:two_women_holding_hands:
 :dancer:
 :dancers:
 :ok_woman:
