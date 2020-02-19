@@ -23,15 +23,24 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.pageAction.onClicked.addListener(function(tab) {
     console.log('Fired Page Action on tab: ' + JSON.stringify(tab));
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        console.log ('Calling approval.js');
+        console.log ('Setting up approval dependencies');
 
+        // This bit of nastiness is so we can keep the code modular
+        // Unforunately, that means loading the scripts in a well defined order
+        // By using the callback madness we make sure that sequential loading occurs.
         chrome.tabs.executeScript(
-            tabs[0].id, {file: 'lib/emojis.js'});
-        chrome.tabs.executeScript(
-            tabs[0].id, {file: 'lib/approval.js'});
-        chrome.tabs.executeScript(
-            tabs[0].id, { code: 'approval();' });
-        console.log('After calling approval.js');
+            tabs[0].id, {file: 'lib/emojis.js'}, function() {
+                console.log ('emojis lib loaded')
+                chrome.tabs.executeScript(
+                    tabs[0].id, {file: 'lib/approval.js'}, function() {
+                        console.log('approval lib loaded')
+                        chrome.tabs.executeScript(
+                            tabs[0].id, { code: 'approval();' }, function() {
+                                console.log('Approval executed');
+                            });
+                    });
+
+            });
 
     });
 
