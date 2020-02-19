@@ -23,9 +23,17 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.pageAction.onClicked.addListener(function(tab) {
     console.log('Fired Page Action on tab: ' + JSON.stringify(tab));
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        console.log ('Calling approval.js');
+
+        // This is currently broken due to refactoring.  Here's why
+        // This runs as a "content script" so it doesn't have access to the
+        // same JS sandbox that everything else is loaded in.
+        // The primary problem is that it doesn't have access to emojis.js
         chrome.tabs.executeScript(
             tabs[0].id,
-            {file: 'approval.js'});
+//            {file: 'lib/approval.js'});
+            { code: 'approval();' });
+        console.log('After calling approval.js');
 
     });
 

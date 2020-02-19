@@ -6,6 +6,7 @@
   "background": {
     "scripts":[
       "lib/emojis.js",
+      "lib/approval.js",
       "background.js"
     ],
     "persistent" : false
@@ -16,6 +17,13 @@
     },
     "default_title" : "Make Approval Emotional"
   },
+  "content_scripts" : [{
+    "matches" : ["*://*.github.com/**/pull/*"],
+    "js" : [
+      "lib/emojis.js",
+      "lib/approval.js"
+    ]
+  }],
   "permissions": [
     "activeTab", "tabs", "declarativeContent", "storage"
   ],
