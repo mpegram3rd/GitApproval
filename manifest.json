@@ -17,13 +17,6 @@
     },
     "default_title" : "Make Approval Emotional"
   },
-  "content_scripts" : [{
-    "matches" : ["*://*.github.com/**/pull/*"],
-    "js" : [
-      "lib/emojis.js",
-      "lib/approval.js"
-    ]
-  }],
   "permissions": [
     "activeTab", "tabs", "declarativeContent", "storage"
   ],
