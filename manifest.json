@@ -4,7 +4,10 @@
   "description": "Git Approval Emoji",
   "manifest_version": 2,
   "background": {
-    "scripts":["background.js"],
+    "scripts":[
+      "lib/emojis.js",
+      "background.js"
+    ],
     "persistent" : false
   },
   "page_action" :
