@@ -17,7 +17,7 @@
     "default_title" : "Make Approval Emotional"
   },
   "permissions": [
-    "activeTab", "tabs", "declarativeContent"
+    "activeTab", "tabs", "declarativeContent", "storage"
   ],
   "icons" : {
     "16": "images/icon16.png",
